@@ -438,15 +438,30 @@ p{
 }
 
 .testimonials-grid article img{
-  
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin-bottom: 3.5rem;
 }
 
 
+.testimonials-grid h4{
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+.testimonials-grid article span{
+  font-size: 0.875rem;
+  color: var(--grayish);
+}
 
 
-
-
-
+.gallery img{
+  width:auto; /*4 columns on desktop*/
+  height: 300px; /*fixed height for uniformity*/
+  object-fit: cover; /*fill without distortion keeping the image sharp*/
+  display: block;
+}
 
 
 
