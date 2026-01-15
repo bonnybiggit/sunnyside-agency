@@ -2,10 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Sunneyside | Creative Agency</title>
+    <!-- SEO -->
+    <meta name="description" content="Sunneyside is a full-service creative agency helping brands grow through impact
+    design and photography">
+    <meta name="keywords" content="Creative Agency, Brand, Graphics Design Photography">
+    <meta name="author" content="Sunneyside Agency">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+     <link rel="icon" href="assets/favicon/favicon-32x32.png">
+
+    <!-- Preload Hero Image for LCP -->
+    <link rel="preload" as="image" href="assets/images/image-header.jpg" media="(min-width:769px)">
+    <link rel="preload" as="image" href="assets/images/image-header.jpg" media="(max-width:768px)">
+    
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap" rel="stylesheet">
+
+    
+
+    
+    <link rel="stylesheet" href="style.css">
+    
+    
+    
 </head>
 <body>
             <header class="hero" style="background-color: greenyellow;">
@@ -147,12 +167,27 @@
                 </div>
             </footer>
 
+    <!-- Mobile Menu Toggle Script -->
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+
+        mobileMenu.addEventListener('click', ()=>{
+            mobileMenu.classList.toggle('active');
+        })
+
+        // close menu when clicking outside
+
+         document.addEventListener('click', (e)=>{
+            if(!menuBtn.contains(e.target)&& !mobileMenu.contains(e.target)){
+                mobileMenu.classList.remove('active')
+            }
+        })
 
 
 
-
-
-
-
+    </script>
 </body>
 </html>
