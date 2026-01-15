@@ -437,6 +437,20 @@ p{
   align-items: center;
 }
 
+
+.testimonials-grid p{
+  margin-bottom: 4rem;
+  line-height: 1.8;
+  color: var(--dark);
+  font-size: 1.125rem;
+}
+
+.testimonials-grid h4{
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+
 .testimonials-grid article img{
   width: 72px;
   height: 72px;
@@ -456,8 +470,13 @@ p{
 }
 
 
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .gallery img{
-  width:auto; /*4 columns on desktop*/
+  width: 25%; /*4 columns on desktop*/
   height: 300px; /*fixed height for uniformity*/
   object-fit: cover; /*fill without distortion keeping the image sharp*/
   display: block;
@@ -469,95 +488,155 @@ p{
 
 
 
-
-
-
-
-/* .testimonials {
-  padding: 4rem 1.5rem;
-  text-align: center;
-  flex-direction: column;
-  align-items: center;
-  display: flex;
-}
-
-.testimonials h2 {
-  font-size: 30px;
-  margin-bottom: 3rem;
-  letter-spacing: 2px;
-  color: #d8dcdf;
-}
-
-.testimonials-grid{
-  
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 2rem 0;
-  padding: 4rem 1.5rem;
-}
-
-
-article img{
-  border-radius: 40px;
-  display: flex;
-}
-
-.testimonials p{
-  font-size: 25px;
-  margin: 10px;
-  padding: 20px;
-  text-align: center;
-  color: rgb(197, 193, 193);
-  
-}
-
-.testimonials h4{
-  font-size: large;
-  text-align: center;
-}
-
-.testimonials span{
-  font-size: large;
-  text-align: center;
-}
-
-
-
-
-
-.gallery{
-  padding: -10%;
-  display: flex;
-}
-
-
-
-
-
-
-
-
 .footer {
-  background: #90d4c6;
+  background: var(--footer-bg);
   text-align: center;
   padding: 4rem 1rem;
 }
+
+/* This is substring attribute selector. It target any image inside the footer whose alt text
+contains the word "logo" (e.g, alt="Company logo" or alt="Brand Logo white"). It is a robust way 
+to target the logo without needing a specific class name*/
+
+.footer img[alt*="logo"]{
+  width: 170px;
+  height: auto;
+  margin-bottom: 2.5rem;
+  /* If you change the order of the filter, the final color will be completely different or simply broken */
+  filter: brightness(0) saturate(100%) invert(37%) sepia(18%) saturate(100%) hue-rotate(118deg) brightness(93%) contrast(88%);
+}
+
 
 .footer ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
+  gap: 3.5rem;
+  margin-bottom: 5rem;
 }
 
-.footer a {
-  color: #119075;
-  font-weight: 500;
+
+.footer ul a{
+  text-decoration: none;
+  color: var(--dark-cyan);
+  font-size: 1.125rem;
+  transition: color 0.3s ease;
 }
 
-.socials {
+footer ul a:hover{
+  color: white;
+}
+
+.socials{
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-} */
+}
+
+
+.socials img{
+  cursor: pointer;
+  transition: filter 03s ease;
+}
+
+.social img:hover{
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* Mobile Styles */
+@media (max-width:768px){
+  h1{
+    font-size: 2.5rem;
+    letter-spacing: 0.4rem;
+  }
+
+  h2{
+    font-size: 2rem;
+  }
+
+  .nav{
+    padding: 2rem 1.5rem;
+  }
+
+  .logo{
+    width: 124px;
+  }
+
+  .nav-links{
+    display: none;
+  }
+
+  .hamburger{
+    display: block;
+  }
+
+  .hero{
+    background-image: url(assets/images/image-header.jpg);
+  }
+
+  .hero-content{
+    padding-top: 4rem;
+  }
+
+  .arrow{
+    margin-top: 2.5rem;
+  }
+
+/* Mobile Stake vertically */
+.split,
+.reverse{
+  flex-direction: column;
+}
+
+/* Image container takes full width fixed height */
+.image-container{
+  width: 100%;
+  height: 300px; /*Consistent height for mobile image*/
+  flex: none;
+}
+
+/* Text takes full width on mobile */
+.text{
+  width: 100%;
+  flex: none;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.services{
+  flex-direction: column;
+}
+
+.service{
+  min-height: 600px;
+}
+
+.testimonials{
+  padding: 4rem 1.5rem;
+}
+
+.testimonials h2{
+  margin-bottom: 4rem;
+  font-size: 1rem;
+}
+
+.testimonials-grid{
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Mobile gallery: 2x2 grid */
+.gallery img{
+  width: 50%;
+  height: 250%;
+}
+
+.footer ul{
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+
+
+
+}
