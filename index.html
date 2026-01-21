@@ -43,7 +43,7 @@
                 </nav>
 
                 <!--Mobile Menu-->
-                <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-menu" id="tobi-menu">
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
@@ -170,24 +170,28 @@
     <!-- Mobile Menu Toggle Script -->
 
     <script>
+
+        // It grabs reference to the DOM elements: the trigger (button) and target (the menu container).
         const menuBtn = document.getElementById('mobile-menu-btn');
+        console.log(menuBtn)
         const mobileMenu = document.getElementById('mobile-menu');
 
-
-        mobileMenu.addEventListener('click', ()=>{
+        //Event: Listen for a click specifically on the button
+            menuBtn.addEventListener('click', ()=> {
             mobileMenu.classList.toggle('active');
-        })
+                })
 
         // close menu when clicking outside
+        //This block prevents the menu from staying stuck open if user clicks the main content area.
 
-         document.addEventListener('click', (e)=>{
-            if(!menuBtn.contains(e.target)&& !mobileMenu.contains(e.target)){
-                mobileMenu.classList.remove('active')
-            }
-        })
+            document.addEventListener('click', (e) => {
+                if(!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)){
+                    mobileMenu.classList.remove('active');
+                    }
+            });
 
 
 
     </script>
 </body>
-</html>
+</html
