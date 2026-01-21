@@ -37,13 +37,13 @@
                             <li><a href="#projects">Projects</a></li>
                             <li><a href="#contact" class="btn">Contact</a></li>
                         </ul>
-                        <button class="hamburger">
+                        <button class="hamburger" id="mobile-menu-btn">
                             <img src="assets/icons/icon-hamburger.svg" alt="" width="24" height="18">
                         </button>
                 </nav>
 
                 <!--Mobile Menu-->
-                <div class="mobile-menu" id="tobi-menu">
+                <div class="mobile-menu" id="mobile-menu">
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
@@ -173,11 +173,12 @@
 
         // It grabs reference to the DOM elements: the trigger (button) and target (the menu container).
         const menuBtn = document.getElementById('mobile-menu-btn');
-        console.log(menuBtn)
+        console.log(menuBtn);
         const mobileMenu = document.getElementById('mobile-menu');
+        console.log(mobileMenu);
 
         //Event: Listen for a click specifically on the button
-            menuBtn.addEventListener('click', ()=> {
+            menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('active');
                 })
 
@@ -194,4 +195,4 @@
 
     </script>
 </body>
-</html
+</html>
